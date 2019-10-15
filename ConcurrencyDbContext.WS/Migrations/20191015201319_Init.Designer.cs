@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ConcurrencyDbContext.WS.Migrations
 {
     [DbContext(typeof(ModifyContext))]
-    [Migration("20191015170450_Init")]
+    [Migration("20191015201319_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,6 +33,18 @@ namespace ConcurrencyDbContext.WS.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("ASD","dbo");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Content = "HELLO"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Content = "WORLD"
+                        });
                 });
 #pragma warning restore 612, 618
         }

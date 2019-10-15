@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ConcurrencyDbContext.WS.Migrations
 {
     [DbContext(typeof(ModifyContext))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    partial class ModifyContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
@@ -31,6 +31,18 @@ namespace ConcurrencyDbContext.WS.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("ASD","dbo");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Content = "HELLO"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Content = "WORLD"
+                        });
                 });
 #pragma warning restore 612, 618
         }

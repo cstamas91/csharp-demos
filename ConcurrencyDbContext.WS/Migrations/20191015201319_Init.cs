@@ -22,6 +22,18 @@ namespace ConcurrencyDbContext.WS.Migrations
                 {
                     table.PrimaryKey("PK_ASD", x => x.Id);
                 });
+
+            migrationBuilder.InsertData(
+                schema: "dbo",
+                table: "ASD",
+                columns: new[] { "Id", "Content" },
+                values: new object[] { 1, "HELLO" });
+
+            migrationBuilder.InsertData(
+                schema: "dbo",
+                table: "ASD",
+                columns: new[] { "Id", "Content" },
+                values: new object[] { 2, "WORLD" });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
